@@ -4,11 +4,13 @@ public class Person {
 
 	protected String firstName;
 	protected String secondName;
+    public String lastName;
 	
 	public Person(String firstName, String secondName) {
 		super();
 		this.firstName = firstName;
 		this.secondName = secondName;
+        //this.lastName
 	}
 
 	public String getFirstName() {

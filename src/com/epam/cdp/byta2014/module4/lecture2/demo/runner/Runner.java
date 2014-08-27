@@ -10,17 +10,16 @@ import com.epam.cdp.byta2014.module4.lecture2.demo.model.Person;
 
 public class Runner {
 
-	
-	
+
 	public static void main(String[] args) {
-		boolean repaeat = true;
+		boolean repeat = true;
 		
 		Person mother = new Person("Irina", "Ivanova");
 		Person father = new Person("Ivan", "Ivanov");
 		
 		List<Person> childList = new ArrayList<>();
 		
-		while(repaeat) {
+		while(repeat) {
 			System.out.println("1. - add a child to list");
 			System.out.println("2. - find a child by name");
 			System.out.println("3. - show list");
@@ -32,7 +31,7 @@ public class Runner {
 			
 			switch(action) {
 			case 0:
-				repaeat = false;
+				repeat = false;
 				System.out.println("Completed");
 				break;
 			

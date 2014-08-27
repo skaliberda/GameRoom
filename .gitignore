@@ -3,3 +3,6 @@
 *.iws
 .idea/*
 target/*
+
+bin
+.idea

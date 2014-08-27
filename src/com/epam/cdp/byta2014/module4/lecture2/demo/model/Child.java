@@ -4,6 +4,7 @@ public class Child extends Person {
 
 	private Person mother;
 	private Person father;
+
 	
 	public Child(String firstName, String secondName) {
 		super(firstName, secondName);
@@ -13,6 +14,7 @@ public class Child extends Person {
 		super(firstName, secondName);
 		this.mother = mother;
 		this.father = father;
+        //super.lastName
 	}
 
 	public Person getMother() {
