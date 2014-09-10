@@ -9,16 +9,19 @@ import java.util.Random;
  * po dva parametra specifi4eskoi dlya grypppu Car/doll/Cubic
  * sortirovat' to odnomy bazovomy parametry i odnomy customnomy
  */
-public class Toy {
+public abstract class Toy {
 
     protected boolean isPlayed = false;
-    protected float price;
-    protected float money;
+    protected double price;
+    protected double money = 1000;
     protected String color;
     protected int ageGroup;
     protected int quant; //amount of the toys in the room
     protected String size;
     protected Random randomGen = new Random();
+
+
+
 
     public float getPrice() {
 
@@ -35,6 +38,4 @@ public class Toy {
     public String getQuant() {
         return quant;
     }
-
-
 }
