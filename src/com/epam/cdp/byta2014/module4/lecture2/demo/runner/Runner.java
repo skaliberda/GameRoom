@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.epam.cdp.byta2014.module4.lecture2.demo.exception.FindByNameException;
-import com.epam.cdp.byta2014.module4.lecture2.demo.model.Child;
-import com.epam.cdp.byta2014.module4.lecture2.demo.model.Person;
+import com.epam.cdp.byta2014.module4.lecture2.demo.model.*;
 
 public class Runner {
 
@@ -14,18 +13,28 @@ public class Runner {
 	public static void main(String[] args) {
 		boolean repeat = true;
 		
-		Person mother = new Person("Irina", "Ivanova");
-		Person father = new Person("Ivan", "Ivanov");
-		
-		List<Person> childList = new ArrayList<>();
-		
+		Car car = new Car();
+        Ball ball = new Ball();
+        Cubic cubic = new Cubic();
+        Doll doll = new Doll();
+
+		List<Toy> toyList = new ArrayList<>();
+        toyList.add(car);
+        toyList.add(ball);
+        toyList.add(cubic);
+        toyList.add(doll);
+
+
+        Теперь надо вывести этот список пользователю - имена обектам чтоли попридумывать.
+                и типа что бы был список из оъектов, типа машики - 2, кубики - 4
+
 		while(repeat) {
 			System.out.println("1. - add a child to list");
 			System.out.println("2. - find a child by name");
 			System.out.println("3. - show list");
 			System.out.println("0. - exit");
-			
-			
+
+
 			Scanner scanner = new Scanner(System.in);
 			int action = scanner.nextInt();
 			
