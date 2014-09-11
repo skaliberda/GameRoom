@@ -17,7 +17,7 @@ public class Car extends Toy {
         color = "blue";
         ageGroup = 2;
         isPlayed = true;
-
+        quantity
 
     }
 

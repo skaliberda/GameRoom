@@ -24,7 +24,6 @@ public abstract class Toy {
 
 
     public float getPrice() {
-
        return price;
    }
 

@@ -19,16 +19,32 @@ public class Runner {
         Doll doll = new Doll();
 
 		List<Toy> toyList = new ArrayList<>();
-        toyList.add(car);
-        toyList.add(ball);
-        toyList.add(cubic);
-        toyList.add(doll);
 
+        for (ArrayList elem : toyList) {                            //Заполняем коллекцию рандомным количеством объектов-игрушек.
+            for (int i=1; i < (Math.random() * 100) + 1; i++){
+            toyList.add(car);
+            }
+            for (int i=1; i < (Math.random() * 100) + 1; i++){
+            toyList.add(ball);
+            }
+            for (int i=1; i < (Math.random() * 100) + 1; i++){
+            toyList.add(cubic);
+            }
+            for (int i=1; i < (Math.random() * 100) + 1; i++){
+            toyList.add(doll);
+            }
 
-        Теперь надо вывести этот список пользователю - имена обектам чтоли попридумывать.
-                и типа что бы был список из оъектов, типа машики - 2, кубики - 4
+        }
+       // public static void shuffle(List<?> toyList){   } тут мне надо его перемешать, эррейлист
 
-		while(repeat) {
+        for (ArrayList elem : toyList) {
+            String s = elem.getClass()  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
+            System.out.print(s + " "); //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
+        }
+//        Теперь надо вывести этот список пользователю - имена обектам чтоли попридумывать.
+//                и типа что бы был список из оъектов, типа машики - 2, кубики - 4
+
+		/*while(repeat) {
 			System.out.println("1. - add a child to list");
 			System.out.println("2. - find a child by name");
 			System.out.println("3. - show list");
@@ -71,8 +87,8 @@ public class Runner {
 				System.out.println("Incorrect value! Please, try again.");
 				break;
 			}
-		}
+		}*/
 	}
-	
+
 	
 }
