@@ -13,12 +13,12 @@ public abstract class Toy {
 
     protected boolean isPlayed = false;
     protected double price;
-    protected double money = 1000;
-    protected String color;
+    //protected double money = 1000;
+    protected int color;
     protected int ageGroup;
-    protected int quant; //amount of the toys in the room
+    //protected int quant; //amount of the toys in the room
     protected String size;
-    protected Random randomGen = new Random();
+    //protected Random randomGen = new Random();
 
 
 
@@ -27,14 +27,20 @@ public abstract class Toy {
        return price;
    }
 
-    public String getColor() {
+    public boolean getPlayed() {
+        return isPlayed;
+    }
+
+    public int getSize(){
+        return size;
+    }
+
+    public int getColor() {
         return color;
     }
 
     public int getAgeGroup() {
         return ageGroup;
     }
-   /* public String getQuant() {
-        return quant;
-    }*/
+
 }

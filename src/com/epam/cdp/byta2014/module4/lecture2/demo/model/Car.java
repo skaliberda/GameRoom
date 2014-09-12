@@ -18,6 +18,8 @@ public class Car extends Toy {
         ageGroup = 2;
         isPlayed = Math.random() < 0.5;
         //quantity
+       // size
+
 
     }
 

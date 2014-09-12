@@ -10,36 +10,36 @@ import com.epam.cdp.byta2014.module4.lecture2.demo.model.*;
 public class Runner {
 
 
-	public static void main(String[] args) {
-		boolean repeat = true;
+    public static void main(String[] args) {
+        boolean repeat = true;
 		
 		/*Car car;
         Ball ball = new Ball();
         Cubic cubic = new Cubic();
         Doll doll = new Doll();*/
 
-		List<Toy> toyList = new ArrayList<>();
+        List<Toy> toyList = new ArrayList<>();
 
-        //for (Toy elem : toyList) {                            //Заполняем коллекцию рандомным количеством объектов-игрушек.
-            for (int i=1; i < (Math.random() * 100) + 1; i++){
+//        for (Toy elem : toyList) {                            //Заполняем коллекцию рандомным количеством объектов-игрушек.
+        for (int i=1; i < (Math.random() * 100) + 1; i++){
             toyList.add(new Car());
-            }
-            for (int i=1; i < (Math.random() * 100) + 1; i++){
+        }
+        for (int i=1; i < (Math.random() * 100) + 1; i++){
             toyList.add(new Ball());
-            }
-            for (int i=1; i < (Math.random() * 100) + 1; i++){
+        }
+        for (int i=1; i < (Math.random() * 100) + 1; i++){
             toyList.add(new Cubic());
-            }
-            for (int i=1; i < (Math.random() * 100) + 1; i++){
+        }
+        for (int i=1; i < (Math.random() * 100) + 1; i++){
             toyList.add(new Doll());
-            }
+        }
 
-       // }
-       // public static void shuffle(List<?> toyList){   } тут мне надо его перемешать, эррейлист
+        // }
+        // public static void shuffle(List<?> toyList){   } тут мне надо его перемешать, эррейлист
 
         for (Toy elem : toyList) {
             String s = String.valueOf(elem.getPrice());  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
-            System.out.print(s + " "); //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
+            System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
         }
 //        Теперь надо вывести этот список пользователю - имена обектам чтоли попридумывать.
 //                и типа что бы был список из оъектов, типа машики - 2, кубики - 4
@@ -88,7 +88,7 @@ public class Runner {
 				break;
 			}
 		}*/
-	}
+    }
 
-	
+
 }
