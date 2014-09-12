@@ -23,7 +23,7 @@ public abstract class Toy {
 
 
 
-    public float getPrice() {
+    public double getPrice() {
        return price;
    }
 
@@ -34,7 +34,7 @@ public abstract class Toy {
     public int getAgeGroup() {
         return ageGroup;
     }
-    public String getQuant() {
+   /* public String getQuant() {
         return quant;
-    }
+    }*/
 }

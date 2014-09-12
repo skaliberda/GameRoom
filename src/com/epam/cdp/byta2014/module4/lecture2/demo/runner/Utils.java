@@ -1,9 +1,10 @@
+/*
 package com.epam.cdp.byta2014.module4.lecture2.demo.runner;
 
 import java.util.List;
 
 import com.epam.cdp.byta2014.module4.lecture2.demo.exception.FindByNameException;
-import com.epam.cdp.byta2014.module4.lecture2.demo.model.Person;
+//import com.epam.cdp.byta2014.module4.lecture2.demo.model.Person;
 
 public class Utils {
 
@@ -25,9 +26,12 @@ public class Utils {
 
 //package com.javarush.test.level02.lesson08.task01;
 //
-///* Минимум двух чисел
-//Написать функцию, которая возвращает минимум из двух чисел.
 //*/
+/* Минимум двух чисел
+//Написать функцию, которая возвращает минимум из двух чисел.
+/*/
+/*//*
+
 //public class Solution
 //{
 //    public static int min(int a, int b)
@@ -37,4 +41,4 @@ public class Utils {
 //        }
 //        else
 //            return b;
-//    }
+//    }*/

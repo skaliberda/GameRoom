@@ -1,3 +1,4 @@
+/*
 package com.epam.cdp.byta2014.module4.lecture2.demo.model;
 
 public class Person {
@@ -34,3 +35,4 @@ public class Person {
 	}
 
 }
+*/

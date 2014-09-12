@@ -1,3 +1,4 @@
+/*
 package com.epam.cdp.byta2014.module4.lecture2.demo.model;
 
 public class Child extends Person {
@@ -37,4 +38,4 @@ public class Child extends Person {
 		return super.getInfo() + "\n Mother: " + mother.getInfo() + "\n Father: " + father.getInfo() + "\n\n";
 	}
 
-}
+}*/

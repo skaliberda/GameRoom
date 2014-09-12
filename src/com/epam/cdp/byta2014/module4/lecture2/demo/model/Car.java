@@ -13,14 +13,14 @@ public class Car extends Toy {
 //
 
     public Car() {
-        price = 20;
+        price = (Math.random() * 100) + 1;       // 20;
         color = "blue";
         ageGroup = 2;
-        isPlayed = true;
-        quantity
+        isPlayed = Math.random() < 0.5;
+        //quantity
 
     }
 
-    quant = randomGen;           //amount of the toys in the room
+    //quant = randomGen;           //amount of the toys in the room
 
 }

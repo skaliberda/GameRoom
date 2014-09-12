@@ -5,4 +5,10 @@ package com.epam.cdp.byta2014.module4.lecture2.demo.model;
  */
 public class Cubic extends Toy {
 
+    public Cubic () {
+        price = (Math.random() * 100) + 1;
+        color = "White";
+        ageGroup = 3;
+        isPlayed = true;
+    }
 }
