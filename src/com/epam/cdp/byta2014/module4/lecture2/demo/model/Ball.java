@@ -15,10 +15,10 @@ public class Ball extends Toy {
     {
         Random rand = new Random();
 
-        price = (Math.random() * 100) + 1;
+        price = (Math.random() * 100) + 1; //http://www.javenue.info/post/55
         color = rand.nextInt(7)+1;
         ageGroup = rand.nextInt(3)+1;
-        isPlayed = Math.random() < 0.5;
+        isPlayed = Math.random() < 0.5;     //http://stackoverflow.com/questions/11468221/get-random-boolean-in-java
        //size = 1.2.3;
     }
 }
