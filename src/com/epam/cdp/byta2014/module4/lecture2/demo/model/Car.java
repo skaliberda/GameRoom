@@ -13,10 +13,12 @@ public class Car extends Toy {
 //
 
     public Car() {
-        price = (Math.random() * 100) + 1;       // 20;
-        color = "blue";
-        ageGroup = 2;
-        isPlayed = Math.random() < 0.5;
+        Random rand = new Random();
+
+        price = (Math.random() * 100) + 1; //http://www.javenue.info/post/55
+        color = rand.nextInt(7)+1;
+        ageGroup = rand.nextInt(3)+1;
+        isPlayed = Math.random() < 0.5;     //http://stackoverflow.com/questions/11468221/get-random-boolean-in-java
         //quantity
        // size
 

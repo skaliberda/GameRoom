@@ -2,10 +2,11 @@ package com.epam.cdp.byta2014.module4.lecture2.demo.runner;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import com.epam.cdp.byta2014.module4.lecture2.demo.exception.FindByNameException;
 import com.epam.cdp.byta2014.module4.lecture2.demo.model.*;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class Runner {
 
@@ -21,24 +22,38 @@ public class Runner {
         List<Toy> toyList = new ArrayList<>();
 
 //        for (Toy elem : toyList) {                            //Заполняем коллекцию рандомным количеством объектов-игрушек.
-        for (int i=1; i < (Math.random() * 100) + 1; i++){
+        int carsAmount = (int) ((Math.random() * 100) + 1);
+        for (int i=1; i < carsAmount; i++){
             toyList.add(new Car());
         }
-        for (int i=1; i < (Math.random() * 100) + 1; i++){
+
+        int ballsAmount = (int) ((Math.random() * 100) + 1);
+        for (int i=1; i < ballsAmount; i++){
             toyList.add(new Ball());
         }
-        for (int i=1; i < (Math.random() * 100) + 1; i++){
+
+        int dollsAmount = (int) ((Math.random() * 100) + 1);
+        for (int i=1; i < dollsAmount; i++){
             toyList.add(new Cubic());
         }
-        for (int i=1; i < (Math.random() * 100) + 1; i++){
+
+        int cubicsAmount = (int) ((Math.random() * 100) + 1);
+        for (int i=1; i < cubicsAmount; i++){
             toyList.add(new Doll());
         }
 
         // }
         // public static void shuffle(List<?> toyList){   } тут мне надо его перемешать, эррейлист
+        System.out.println("Here are the prices of "+toyList.size()+" toys in the room:");
+        System.out.print("Cars: " + carsAmount);
+        System.out.print("    Balls: " + ballsAmount);
+        System.out.print("    Dolls: " + dollsAmount);
+        System.out.println("    Cubics: " + cubicsAmount);
 
+        System.out.print("Prices are: ");
         for (Toy elem : toyList) {
-            String s = String.valueOf(elem.getPrice());  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
+
+            String s = "$"+String.format("%1.2f", elem.getPrice());  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
             System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
         }
 //        Теперь надо вывести этот список пользователю - имена обектам чтоли попридумывать.

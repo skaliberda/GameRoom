@@ -17,7 +17,7 @@ public abstract class Toy {
     protected int color;
     protected int ageGroup;
     //protected int quant; //amount of the toys in the room
-    protected String size;
+    protected int size;
     //protected Random randomGen = new Random();
 
 
