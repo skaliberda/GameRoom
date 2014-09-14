@@ -15,7 +15,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        int numberInPlay = 0;
+        int numberInPlay;
         boolean repeat = true;
 
 		/*Car car;
@@ -53,6 +53,8 @@ public class Runner {
             ballsAmount = 0;
             dollsAmount = 0;
             cubicsAmount = 0;
+            numberInPlay = 0;
+
             for (Toy elem : toyList) {
 
                 if (elem instanceof Car) {
@@ -67,43 +69,47 @@ public class Runner {
                 if (elem instanceof Cubic) {
                     cubicsAmount++;
                 }
-
-            }
-        }
-
-        System.out.println("Here are the prices of " + toyList.size() + " toys in the room:");
-        System.out.print("Cars: " + carsAmount);
-        System.out.print("    Balls: " + ballsAmount);
-        System.out.print("    Dolls: " + dollsAmount);
-        System.out.println("    Cubics: " + cubicsAmount);
-
-        System.out.print("Prices are: ");
-        for (Toy elem : toyList) {
-
-            if (elem.getPlayed()) {
-                numberInPlay++;
-            }
-            String s = "$" + String.format("%1.2f", elem.getPrice());  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
-            System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
-        }
-        System.out.println();
-        System.out.println("Amongst them in play - " + numberInPlay);
-
-
-        //Now we take only toys which are for 1 Age Group.
-        if (i == 1) {
-            System.out.println();
-            System.out.println("Now let's filter toys only from Age Group 1:");
-
-
-            for (Iterator<Toy> iter = toyList.iterator(); iter.hasNext(); ) {
-                Toy elem = iter.next();
-                if (elem.getAgeGroup() != 1) {
-                    iter.remove();
+                if (elem.getPlayed()) {
+                    numberInPlay++;
                 }
             }
+
+
+
+            System.out.print("Cars: " + carsAmount);
+            System.out.print("    Balls: " + ballsAmount);
+            System.out.print("    Dolls: " + dollsAmount);
+            System.out.println("    Cubics: " + cubicsAmount);
+            System.out.println("Here are the prices of " + toyList.size() + " toys in the room:");
+
+            System.out.print("Prices are: ");
+            for (Toy elem : toyList) {
+
+
+                String s = "$" + String.format("%1.2f", elem.getPrice());  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
+                System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
+            }
+            System.out.println();
+            System.out.println("Amongst them in play - " + numberInPlay);
+
+
+            //Now we take only toys which are for 1 Age Group.
+            if (i == 1) {
+                System.out.println();
+                System.out.println("Now let's filter toys only from Age Group 1:");
+
+
+                for (Iterator<Toy> iter = toyList.iterator(); iter.hasNext(); ) {
+                    Toy elem = iter.next();
+                    if (elem.getAgeGroup() != 1) {
+                        iter.remove();
+                    }
+                }
+            }
+
         }
-
-
     }
 }
+
+//Сделать нормальную сортировку.
+//Экспешны и поиграться с timer и типами коллекций.
