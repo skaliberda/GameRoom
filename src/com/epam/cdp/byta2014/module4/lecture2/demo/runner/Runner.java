@@ -1,8 +1,6 @@
 package com.epam.cdp.byta2014.module4.lecture2.demo.runner;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 //import java.util.Scanner;
 
 import com.epam.cdp.byta2014.module4.lecture2.demo.exception.FindByNameException;
@@ -45,7 +43,7 @@ public class Runner {
         for (int i = 1; i < cubicsAmount; i++) {
             toyList.add(new Doll());
         }
-
+        Collections.sort(toyList, new CustomComparator());          //Сортим по возрастающей по проперти цена.
         // }
         // public static void shuffle(List<?> toyList){   } тут мне надо его перемешать, эррейлист
         for (int i = 1; i < 3; i++) {
@@ -82,7 +80,7 @@ public class Runner {
             System.out.println("    Cubics: " + cubicsAmount);
             System.out.println("Here are the prices of " + toyList.size() + " toys in the room:");
 
-            System.out.print("Prices are: ");
+            System.out.print("Sorted prices are: ");
             for (Toy elem : toyList) {
 
 
