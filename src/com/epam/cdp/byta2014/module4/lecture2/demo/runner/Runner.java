@@ -12,73 +12,58 @@ public class Runner {
 
 
     public static void main(String[] args) {
-
+        long startTime = System.currentTimeMillis();
         int numberInPlay;
-        boolean repeat = true;
 
-		/*Car car;
-        Ball ball = new Ball();
-        Cubic cubic = new Cubic();
-        Doll doll = new Doll();*/
 
-        List<Toy> toyList = new ArrayList<>();
 
-//        for (Toy elem : toyList) {                            //Заполняем коллекцию рандомным количеством объектов-игрушек.
-        int carsAmount = (int) ((Math.random() * 50) + 1);
-        for (int i = 1; i < carsAmount; i++) {
-            toyList.add(new Car());
-        }
+        List toyList = new ArrayList();
 
-        int ballsAmount = (int) ((Math.random() * 50) + 1);
-        for (int i = 1; i < ballsAmount; i++) {
-            toyList.add(new Ball());
-        }
+        long addArray = Utils.initiateList(toyList);         // ???
 
-        int dollsAmount = (int) ((Math.random() * 50) + 1);
-        for (int i = 1; i < dollsAmount; i++) {
-            toyList.add(new Cubic());
-        }
 
-        int cubicsAmount = (int) ((Math.random() * 50) + 1);
-        for (int i = 1; i < cubicsAmount; i++) {
-            toyList.add(new Doll());
-        }
+
+
+
+
         Collections.sort(toyList, new CustomComparator());          //Сортим по возрастающей по проперти цена.
-        // }
-        // public static void shuffle(List<?> toyList){   } тут мне надо его перемешать, эррейлист
+
+
         for (int i = 1; i < 3; i++) {
-            carsAmount = 0;
+            /*carsAmount = 0;
             ballsAmount = 0;
             dollsAmount = 0;
-            cubicsAmount = 0;
-            numberInPlay = 0;
+            cubicsAmount = 0;*/
+
+            //numberInPlay = Utils.countInPlay(toyList);
+            /*numberInPlay = 0;
 
             for (Toy elem : toyList) {
 
-                if (elem instanceof Car) {
-                    carsAmount++;
-                }
-                if (elem instanceof Ball) {
-                    ballsAmount++;
-                }
-                if (elem instanceof Doll) {
-                    dollsAmount++;
-                }
-                if (elem instanceof Cubic) {
-                    cubicsAmount++;
-                }
+//                if (elem instanceof Car) {
+//                    carsAmount++;
+//                }
+//                if (elem instanceof Ball) {
+//                    ballsAmount++;
+//                }
+//                if (elem instanceof Doll) {
+//                    dollsAmount++;
+//                }
+//                if (elem instanceof Cubic) {
+//                    cubicsAmount++;
+//                }
                 if (elem.getPlayed()) {
                     numberInPlay++;
                 }
-            }
+            }*/
 
 
 
-            System.out.print("Cars: " + carsAmount);
+            /*System.out.print("Cars: " + carsAmount);
             System.out.print("    Balls: " + ballsAmount);
             System.out.print("    Dolls: " + dollsAmount);
-            System.out.println("    Cubics: " + cubicsAmount);
-            System.out.println("Here are the prices of " + toyList.size() + " toys in the room:");
+            System.out.println("    Cubics: " + cubicsAmount);*/
+            /*System.out.println("Here are the prices of " + toyList.size() + " toys in the room:");
 
             System.out.print("Sorted prices are: ");
             for (Toy elem : toyList) {
@@ -88,7 +73,8 @@ public class Runner {
                 System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
             }
             System.out.println();
-            System.out.println("Amongst them in play - " + numberInPlay);
+            System.out.println("Amongst them in play - " + numberInPlay);*/
+            Utils.sout(toyList);
 
 
             //Now we take only toys which are for 1 Age Group.
@@ -105,9 +91,23 @@ public class Runner {
                 }
             }
 
+
         }
+
+        List toyListLinked = new LinkedList();              //Here we create same array, but Linked
+
+        long addLinked = Utils.initiateList(toyListLinked);     //initiate Linked List and get timer from it.
+        long searchLinked = Utils.countInPlay(toyListLinked);     //search in Linked list
+
+        long addDiff=addArray-addLinked;
+        long searchDiff= Utils.searchArray - searchLinked;
+        //long deleteDiff=deleteArray-deleteLinked;
+
+        System.out.println("Addition in LinkedList was faster than in ArrayList by "+addDiff+"ms");
+        System.out.println("Search in LinkedList was faster than in ArrayList by "+searchDiff+"ms");
+       // System.out.println("Deletion in LinkedList was faster than in ArrayList by "+deleteDiff+"ms");
+
+        System.out.println("Time taken for overall execution: " + (System.currentTimeMillis() - startTime) + "ms");
     }
 }
 
-//Сделать нормальную сортировку.
-//Экспешны и поиграться с timer и типами коллекций.
