@@ -10,7 +10,8 @@ import java.util.List;
  */
 public class Utils {
 
-    public static long searchArray;
+
+    static int numberInPlay = 0;
 
 
     public static long initiateList(List<Toy> toyList) {
@@ -52,12 +53,14 @@ public class Utils {
             System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
         }
         System.out.println();
-        System.out.println("Amongst them in play - " + Utils.countInPlay(toyList));
+
+        System.out.println("Amongst them in play - " + numberInPlay);//Utils.countInPlay(toyList));
     }
 
-    public static int countInPlay(List<Toy> toyList){
-        int numberInPlay = 0;
+    public static long countInPlay(List<Toy> toyList){
+
         long startTime = System.currentTimeMillis();
+        numberInPlay = 0;
 
         for (Toy elem : toyList) {
 
@@ -77,8 +80,8 @@ public class Utils {
                 numberInPlay++;
             }
         }
-        searchArray = System.currentTimeMillis()-startTime;
-        return numberInPlay;
+        long searchArray = System.currentTimeMillis()-startTime;
+        return searchArray;
     }
 
 }
