@@ -3,6 +3,7 @@ package com.epam.cdp.byta2014.module4.lecture2.demo.runner;
 import com.epam.cdp.byta2014.module4.lecture2.demo.model.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -41,7 +42,7 @@ public class Utils {
 
     }
 
-    public static void sout(List<Toy> toyList){
+    public static long sout(List<Toy> toyList){         //этот метод не только выводит что нам нужно, но и возвращает время поиска по массиву!!!
 
         System.out.println("Here are the prices of " + toyList.size() + " toys in the room:");
 
@@ -54,7 +55,10 @@ public class Utils {
         }
         System.out.println();
 
+        long searchArray = countInPlay(toyList);
+
         System.out.println("Amongst them in play - " + numberInPlay);//Utils.countInPlay(toyList));
+        return searchArray;
     }
 
     public static long countInPlay(List<Toy> toyList){
@@ -80,8 +84,20 @@ public class Utils {
                 numberInPlay++;
             }
         }
-        long searchArray = System.currentTimeMillis()-startTime;
-        return searchArray;
+        return System.currentTimeMillis()-startTime;
     }
+
+    public static long deleteElement(List<Toy> toyList){
+        long startTime = System.currentTimeMillis();
+
+        for (Iterator<Toy> iter = toyList.iterator(); iter.hasNext(); ) {
+            Toy elem = iter.next();
+            if (elem.getAgeGroup() != 1) {
+                iter.remove();
+            }
+        }
+        return System.currentTimeMillis() - startTime;
+    }
+
 
 }
