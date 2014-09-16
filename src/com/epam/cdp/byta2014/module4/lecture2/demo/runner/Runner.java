@@ -3,7 +3,7 @@ package com.epam.cdp.byta2014.module4.lecture2.demo.runner;
 import java.util.*;
 //import java.util.Scanner;
 
-import com.epam.cdp.byta2014.module4.lecture2.demo.exception.FindByNameException;
+import com.epam.cdp.byta2014.module4.lecture2.demo.exception.PerformanceException;
 import com.epam.cdp.byta2014.module4.lecture2.demo.model.*;
 //import com.sun.java.util.jar.pack.Instruction;
 import com.sun.org.apache.xpath.internal.SourceTree;
@@ -45,7 +45,13 @@ public class Runner {
         List toyListLinked = new LinkedList();              //Here we create same array, but Linked
 
         long addLinked = Utils.initiateList(toyListLinked);     //initiate Linked List and get timer from it.
-        long searchLinked = Utils.countInPlay(toyListLinked);     //search in Linked list
+        try {
+            long searchLinked = Utils.countInPlay(toyListLinked);     //search in Linked list
+        } catch (Exception PerformanceException) {
+            System.out.println(PerformanceException.getMessage());
+        } finally {
+            return;
+        }
         long deleteLinked = Utils.deleteElement(toyListLinked);     //search in Linked list
 
         long addDiff = addArray - addLinked;

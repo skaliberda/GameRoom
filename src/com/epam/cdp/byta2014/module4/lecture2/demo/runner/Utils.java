@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.epam.cdp.byta2014.module4.lecture2.demo.exception.PerformanceException;
+
 /**
  * Created by Pavlo_Kamyshov on 9/15/2014.
  */
@@ -61,7 +63,7 @@ public class Utils {
         return searchArray;
     }
 
-    public static long countInPlay(List<Toy> toyList){
+    public static long countInPlay(List<Toy> toyList) throws PerformanceException {
 
         long startTime = System.currentTimeMillis();
         numberInPlay = 0;
@@ -84,7 +86,11 @@ public class Utils {
                 numberInPlay++;
             }
         }
-        return System.currentTimeMillis()-startTime;
+        long diff = System.currentTimeMillis() - startTime;
+        if (diff < 0) {
+            throw new PerformanceException(String.valueOf(diff));
+        }
+        return diff;
     }
 
     public static long deleteElement(List<Toy> toyList){
