@@ -20,6 +20,7 @@ public class Runner {
         long addArray = Utils.initiateList(toyList);         // ???
 
 
+
         Collections.sort(toyList, new CustomComparator());          //Сортим по возрастающей по проперти цена.
 
 
@@ -35,12 +36,7 @@ public class Runner {
 
 
         long deleteArray = Utils.deleteElement(toyList);
-        for (Iterator<Toy> iter = toyList.iterator(); iter.hasNext(); ) {
-            Toy elem = iter.next();
-            if (elem.getAgeGroup() != 1) {
-                iter.remove();
-            }
-        }
+
         Utils.sout(toyList);
 
 
