@@ -63,7 +63,7 @@ public class Utils {
         return searchArray;
     }
 
-    public static long countInPlay(List<Toy> toyList) throws PerformanceException {
+    public static long countInPlay(List<Toy> toyList) {
 
         long startTime = System.currentTimeMillis();
         numberInPlay = 0;
@@ -87,10 +87,16 @@ public class Utils {
             }
         }
         long diff = System.currentTimeMillis() - startTime;
-        if (diff < 0) {
-            throw new PerformanceException(String.valueOf(diff));
-        }
+
         return diff;
+    }
+
+    public static long countDiff(long searchArray, long searchLinked) throws PerformanceException {
+        long differ = searchArray-searchLinked;
+        if (differ < (long) 0) {
+            throw new PerformanceException(String.valueOf(differ));
+        }
+        return differ;
     }
 
     public static long deleteElement(List<Toy> toyList){
