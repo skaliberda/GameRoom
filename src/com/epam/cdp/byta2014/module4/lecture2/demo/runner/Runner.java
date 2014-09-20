@@ -52,17 +52,18 @@ public class Runner {
         long searchDiff = searchArray - searchLinked;  //seachArray надо заменить на время, которое требуется чтобы поискать по Аррей листу. Видимо создать как и линкед лист. А по хорошему выдрать по время выполнения обычной процедуры(которая первый раз).!!!!!!! TODO
         long deleteDiff=deleteArray-deleteLinked;
 
-        try {
-            Utils.countDiff(searchArray,searchLinked);  //search in Linked list
-        } catch (Exception PerformanceException) {
-            System.out.println(PerformanceException.getMessage());
-        }
 
         System.out.println();
         System.out.println("Addition in LinkedList was faster than in ArrayList by " + addDiff + "ms");
         System.out.println("Search in LinkedList was faster than in ArrayList by "+searchDiff+"ms");
         System.out.println("Deletion in LinkedList was faster than in ArrayList by "+deleteDiff+"ms");
 
+        try {
+            Utils.countDiff(searchArray, searchLinked);  //search in Linked list
+        } catch (Exception PerformanceException) {
+            System.out.println(PerformanceException.getMessage());
+        }
+        System.out.println();
         System.out.println("Time taken for overall execution: " + (System.currentTimeMillis() - startTime) + "ms");
     }
 }
