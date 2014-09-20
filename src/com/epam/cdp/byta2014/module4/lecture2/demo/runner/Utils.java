@@ -20,7 +20,7 @@ public class Utils {
     public static long initiateList(List<Toy> toyList) {
         long startTime = System.currentTimeMillis();
 
-        int amount = 5000;
+        int amount = 1000;
         //int carsAmount = 5000;//(int) ((Math.random() * 50) + 1);  //рандомные числа были убраны, чтобы иметь возможность сравнивать производительность.
         for (int i = 0; i < amount; i++) {
             toyList.add(new Car());
@@ -52,14 +52,14 @@ public class Utils {
         for (Toy elem : toyList) {
 
 
-            String s = "$" + String.format("%1.2f", elem.getPrice());  //вот тут я по идее не знаю, что это за класс. И надо либо делать GetClass, либо использовать Generics.
-            System.out.print(s + " ");  //Надо вывести какую-то дефолтную характеристику подкласса игрушки.
+            String s = "$" + String.format("%1.2f", elem.getPrice());
+            System.out.print(s + " ");
         }
         System.out.println();
 
         long searchArray = countInPlay(toyList);
 
-        System.out.println("Amongst them in play - " + numberInPlay);//Utils.countInPlay(toyList));
+        System.out.println("Amongst them in play - " + numberInPlay);
         return searchArray;
     }
 
@@ -70,18 +70,6 @@ public class Utils {
 
         for (Toy elem : toyList) {
 
-//                if (elem instanceof Car) {
-//                    carsAmount++;
-//                }
-//                if (elem instanceof Ball) {
-//                    ballsAmount++;
-//                }
-//                if (elem instanceof Doll) {
-//                    dollsAmount++;
-//                }
-//                if (elem instanceof Cubic) {
-//                    cubicsAmount++;
-//                }
             if (elem.getPlayed()) {
                 numberInPlay++;
             }

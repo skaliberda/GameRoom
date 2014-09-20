@@ -19,6 +19,6 @@ public class Ball extends Toy {
         color = rand.nextInt(7)+1;
         ageGroup = rand.nextInt(3)+1;
         isPlayed = Math.random() < 0.5;     //http://stackoverflow.com/questions/11468221/get-random-boolean-in-java
-       //size = 1.2.3;
+
     }
 }
