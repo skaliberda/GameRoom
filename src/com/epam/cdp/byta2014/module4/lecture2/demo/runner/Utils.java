@@ -2,6 +2,7 @@ package com.epam.cdp.byta2014.module4.lecture2.demo.runner;
 
 import com.epam.cdp.byta2014.module4.lecture2.demo.model.*;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,12 +16,45 @@ public class Utils {
 
 
     static int numberInPlay = 0;
+    static int amount = 1000;
 
 
     public static long initiateList(List<Toy> toyList) {
         long startTime = System.currentTimeMillis();
 
-        int amount = 1000;
+
+        File myFile = new File("D:/Repository/GameRoom/GameRoom/data.xml");
+        if (!myFile.exists()) {
+            System.out.println("File with toys amount is NOT found!!!");
+
+        }
+        if (!myFile.canRead() || !myFile.canWrite()) {
+            System.out.println("File with toys amount can NOT be read/written");
+
+        }
+
+        try {
+            BufferedReader myFileSymbol = new BufferedReader(new FileReader(myFile));
+            String str;
+            while ((str = myFileSymbol.readLine()) != null) {
+                if (str.contains("amount=")) {
+                    String st = str.replace("amount=", "");
+                    amount = Integer.parseInt(st);
+                }
+
+            }
+            myFileSymbol.close();
+
+
+        } catch (IOException e) {
+            System.out.println("Error while working with file!");
+
+        }
+
+        //FileInputStream(String myFile.getName()) throws FileNotFoundException
+        // BufferedReader amount = new BufferedReader(new InputStreamReader(myFile));
+
+        // int amount = 1000;      //Количество игрушек будет теперь вычитываться с XML файла.
         //int carsAmount = 5000;//(int) ((Math.random() * 50) + 1);  //рандомные числа были убраны, чтобы иметь возможность сравнивать производительность.
         for (int i = 0; i < amount; i++) {
             toyList.add(new Car());
