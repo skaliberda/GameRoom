@@ -23,7 +23,7 @@ public class Utils {
         long startTime = System.currentTimeMillis();
 
 
-        File myFile = new File("D:/Repository/GameRoom/GameRoom/data.xml");
+        File myFile = new File("data.xml");
         if (!myFile.exists()) {
             System.out.println("File with toys amount is NOT found!!!");
 
