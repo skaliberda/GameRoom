@@ -9,7 +9,8 @@ public class PerformanceException extends Exception {
 	}
 	
 	public String getMessage() {
-        return "[PerformanceException]: Linked list is slower than ArrayList while searching for specific elements in an array'" + msg + "'!";
+        msg = msg.replace("-", "");
+        return "[PerformanceException]: Linked list is slower than ArrayList while searching for specific elements in an array by " + msg + "ms!";
     }
 
 }

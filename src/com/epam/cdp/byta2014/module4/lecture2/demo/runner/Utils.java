@@ -25,6 +25,7 @@ public class Utils {
 
         File myFile = new File("data.xml");
         if (!myFile.exists()) {
+            System.out.println();
             System.out.println("File with toys amount is NOT found!!!");
 
         }
@@ -37,9 +38,9 @@ public class Utils {
             BufferedReader myFileSymbol = new BufferedReader(new FileReader(myFile));
             String str;
             while ((str = myFileSymbol.readLine()) != null) {
-                if (str.contains("amount=")) {
-                    String st = str.replace("amount=", "");
-                    amount = Integer.parseInt(st);
+                if (str.contains("<amount>") && str.contains("</amount>")) {
+                    str = str.replace("<amount>", "").replace("</amount>", "");
+                    amount = Integer.parseInt(str);
                 }
 
             }
